@@ -1,0 +1,45 @@
+.tooltip {
+  position: relative;
+  display: inline;
+
+  margin-left: var(--med);
+}
+
+.tooltip svg {
+  font-size: 1rem;
+}
+
+.tooltip:hover {
+  cursor: help;
+}
+
+.tooltip:hover .tooltip-text {
+  display: block;
+  /* visibility: visible; */
+}
+
+.tooltip-text {
+  display: none;
+
+  position: absolute;
+  left: 150%;
+  top: 0;
+
+  width: 13rem;
+
+  font-size: .8rem;
+  text-align: left;
+  padding: var(--med);
+
+  /* transform: translateY(-50%); */
+
+  /* transform: translateX(50%); */
+
+  /* visibility: hidden; */
+
+
+  background-color: var(--med-blue);
+
+  border: var(--med-grey) dashed;
+  border-width: var(--tp-btm-lft-rght-med);
+}

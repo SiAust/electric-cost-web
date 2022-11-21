@@ -1,0 +1,23 @@
+.clock {
+  display: flex;
+  flex-direction: row;
+  /* width: 2vw; */
+  height: fit-content;
+  margin: 1rem;
+  /* border: 3px black solid; */
+}
+
+.clock-component {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 5rem;
+}
+
+.clock-component button {
+  font-size: 2rem;
+}
+
+.clock-component p {
+  text-transform: capitalize;
+}

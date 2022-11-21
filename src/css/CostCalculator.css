@@ -1,0 +1,17 @@
+.cost-calc {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  height: 38rem;
+
+  align-items: center;
+
+  z-index: 1;
+}
+
+.ttl-cost-grp {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
