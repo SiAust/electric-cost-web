@@ -4,12 +4,18 @@ const STAND_CHRG = 0.46;
 
 /** Calculate the cost of electricity from the user selected timer
  *  @param watts number of watts
- *  @param days number of days used
  *  @param hours number of hours used in a day
- *  @param costOptions object to alter the calculation based on user defined time periods and optional charges
+ *  @param days number of days used
+ *  @param costOverTimeDisp string which alters calculation based on "weekly", "monthly" or "yearly"
+ *  @param incStandCharge boolean value to flag whether standing charge fee should be added
  *  @return the cost as a string array, monetary units and subunits to two decimal places
  */
-export function calc(watts, days, hours, { costOverTimeDisp, incStandCharge }) {
+export function timerCalc(
+  watts,
+  hours,
+  days = 1,
+  { costOverTimeDisp, incStandCharge }
+) {
   const kiloWattHours = (watts * hours) / 1000;
 
   let cost = 0;
@@ -26,12 +32,29 @@ export function calc(watts, days, hours, { costOverTimeDisp, incStandCharge }) {
 
   if (costOverTimeDisp === "yearly") {
     // calc electric cost for year (52 weeks)
-    cost *= standChgWeeksAdjust = 52; // check this assignment
+    cost *= standChgWeeksAdjust = 52; // TODO check this assignment / calculation
   }
 
   if (incStandCharge) {
     cost += STAND_CHRG * (days * standChgWeeksAdjust);
   }
+  // limit to two decimal places
+  const costStr = cost.toFixed(2);
+
+  // split the units and subunits
+  const unitsStr = costStr.split(".");
+
+  return [unitsStr[0], unitsStr[1]];
+}
+
+export function presetCalc(watts, minutes) {
+  // console.log(`presetCalc watts:${watts} minutes:${minutes}`);
+  const kiloWattHours = (watts * (minutes / 60)) / 1000;
+  // console.log(`minutes(${minutes}) / 60 = ${minutes / 60}`);
+  let cost = 0;
+
+  cost += kiloWattHours * PRICE_PER_KWH;
+
   // limit to two decimal places
   const costStr = cost.toFixed(2);
 

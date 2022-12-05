@@ -1,12 +1,12 @@
 import React from "react";
-// Clock components
+// Timer components
 import Days from "./Days.js";
 import Hours from "./Hours.js";
 
 // css
-import "./css/Clock.css";
+import "./css/Timer.css";
 
-function Clock({ days, hours, setDays, setHours }) {
+function Timer({ days, hours, setDays, setHours }) {
   return (
     <div className="clock">
       <Hours hours={hours} setHours={setHours} />
@@ -15,4 +15,4 @@ function Clock({ days, hours, setDays, setHours }) {
   );
 }
 
-export default Clock;
+export default Timer;

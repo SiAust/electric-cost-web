@@ -3,7 +3,7 @@
   box-sizing: border-box;
 
   width: 100%;
-  height: 100%;
+  height: 60%;
 
   border: var(--dark-grey) solid;
   border-width: var(--lft-rght-thk);

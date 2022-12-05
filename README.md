@@ -11,4 +11,4 @@ devices are also included, based on popularity, such as a PlayStation 5.
 
 - Allow adding of custom device
 - Comparison of devices
-- Currency selection
+- Currency selection / show cost by Countries electric price
