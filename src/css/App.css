@@ -29,6 +29,7 @@
   /* border */
   --tp-btm-med: var(--med) 0 var(--med) 0;
 
+  --lft-rght-thin: 0 var(--thin) 0 var(--thin);
   --lft-rght-med: 0 var(--med) 0 var(--med);
   --lft-rght-thk: 0 var(--thick) 0 var(--thick);
 
